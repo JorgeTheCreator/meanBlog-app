@@ -8,23 +8,18 @@
   menuConfig.$inject = ['Menus'];
 
   function menuConfig(menuService) {
-    // Set top bar menu items
+
+    // -------------- Set top bar menu items ------------//
+
+    // -------------- Latest Posts menu ------------//
     menuService.addMenuItem('topbar', {
-      title: 'Posts',
-      state: 'posts',
-      type: 'dropdown',
+      title: 'Latest Posts',
+      state: 'posts.list',
       roles: ['*']
     });
-
-    // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'posts', {
-      title: 'List Posts',
-      state: 'posts.list'
-    });
-
-    // Add the dropdown create item
-    menuService.addSubMenuItem('topbar', 'posts', {
-      title: 'Create Post',
+      // -------------- Create Posts menu ------------//
+    menuService.addMenuItem('topbar', {
+      title: 'Create Posts',
       state: 'posts.create',
       roles: ['user']
     });
