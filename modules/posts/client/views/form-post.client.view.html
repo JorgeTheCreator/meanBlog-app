@@ -6,11 +6,27 @@
     <form name="vm.form.postForm" class="form-horizontal" ng-submit="vm.save(vm.form.postForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.post.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.postForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Post name is required.</p>
-          </div>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.post.title" id="title" class="form-control" placeholder="Title" required>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="body">Body</label>
+          <textarea name="body" type="text" ng-model="vm.post.body" id="body" class="form-control" placeholder="Speak your mind.." required></textarea>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="major">Major</label>
+          <input name="major" type="text" ng-model="vm.post.major" id="major" class="form-control" placeholder="Major" required>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="category">Category</label>
+          <select name="category" type="text" ng-model="vm.post.category" id="category" class="form-control" required>
+              <option value=''>- - - please select - - -</option>
+              <option value='Relationship'>Relationship</option>
+              <option value='Advise'>Advise</option>
+              <option value='Homework'>Homework</option>
+              <option value='Help'>Help</option>
+              <option value='Food'>Food</option>
+          </select>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.post._id ? 'Update' : 'Create'}}</button>
